@@ -1,0 +1,24 @@
+<!-- lesson 17 one away binding  -->
+<!-- here we use event binding to acess the function(metedo) we create on html  -->
+<!-- <input (input)="onInputChange($event)">
+<p>{{ text }}</p> -->
+
+<!-- one way binding property binding -->
+<!-- disabled, hidden, checked -> works only with proporty-->
+<!-- if u got an error usign property, try add "attr." -->
+<!-- 
+<div>
+    <img [attr.src]="product.image">
+    <button [disabled]="!(product.inStock > 0)"> Buy now </button>
+     <p>Name: {{ product.name }}</p>
+    <p>Price: {{ '$' + product.price }}</p>
+    <p>Color: {{ product.color }}</p>
+    <p>Discounted: {{ getDiscountedPrice().toFixed(2) }}</p>
+    <p>{{product.inStock > 0 ? 'Only ' + product.inStock + ' itens left' : 'Not in Stock'  }}</p>
+    <button (click)="decrementValue()"> - </button>
+    <span> {{ addToCart }}</span>
+    <button (click)="incrementValue()"> + </button>
+</div> -->
+<app-search (searchTextChanged)="setSearchText($event)"></app-search>
+<product-list [searchText]="searchText" #productListComponent></product-list>
+<product-detail *ngIf="productListComponent.selectedProduct"></product-detail>

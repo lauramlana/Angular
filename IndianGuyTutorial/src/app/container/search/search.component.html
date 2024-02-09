@@ -1,0 +1,18 @@
+<!-- lesson 18 two way binding -->
+<div>
+    <input [(ngModel)]="searchText"
+    (input)="onSearchTextChanged()"
+    >
+    <button 
+        [disabled]="!searchText"
+        [ngClass]="{
+          'btn': true, 
+          'btn-search': searchText,
+          'btn-search-disabled': !searchText
+    }"> 
+        Search 
+    </button>
+</div>
+<div> 
+    <p *ngIf="searchText != ''">Search result for: {{ searchText }}</p>
+</div>
